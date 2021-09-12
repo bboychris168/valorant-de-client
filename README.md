@@ -1,3 +1,5 @@
+# THIS REPO HAS BEEN CONVERTED TO ENGLISH!!!!!!!!
+
 # VALORANT DE Client
 VALORANT Desktop Client made for the [VALORANT DE Server](https://discord.gg/HCmvsEQ) inspired by RumbleMike's [ValorScrim](https://github.com/RumbleMike/ValorScrim) Program
 
