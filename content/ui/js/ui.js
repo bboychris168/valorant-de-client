@@ -67,7 +67,7 @@ document.querySelector("#twitchlink").addEventListener("click", async () => {
 var created = false
 document.querySelector("#createlobby").addEventListener("click", async () => {
     if(created == false) {
-        document.getElementById("createlobby").innerHTML = "Wird erstellt..."
+        document.getElementById("createlobby").innerHTML = "Lobby being created ..."
         async function createLobby() {
             var response = await fetch("http://127.0.0.1:42069/ingame/v1/create", {
                 method: "GET"
@@ -80,7 +80,7 @@ document.querySelector("#createlobby").addEventListener("click", async () => {
         console.log(await createLobby())
         if(data_data != undefined && raw_data.status == 200) {
             created = true
-            document.getElementById("createlobby").innerHTML = "Lobby erstellt"
+            document.getElementById("createlobby").innerHTML = "LOBBY CREATED"
             document.getElementById("createlobby").style.cssText = "color:#fff;background-color:#696969"
             if(document.getElementById("createlobbyid") != null) {
                 document.getElementById("createlobbyid").innerHTML = data_data.party_id
@@ -111,11 +111,11 @@ document.querySelector("#createlobby").addEventListener("click", async () => {
             //document.getElementById("createpartyid").innerHTML = data_data.party_id
             setTimeout(function() {
                 created = false
-                document.getElementById("createlobby").innerHTML = "Erstelle Lobby"
+                document.getElementById("createlobby").innerHTML = "CREATE LOBBY"
                 document.getElementById("createlobby").style.cssText = ""
             }, 5000)
         } else if(data_data != undefined && raw_data.status == 403) {
-            document.getElementById("createlobby").innerHTML = "Lobby erstellt (DU BIST NICHT PARTY OWNER. STELLE SICHER DASS DIE LOBBY OFFEN IST"
+            document.getElementById("createlobby").innerHTML = "Lobby created (YOU ARE NOT THE PARTY OWNER. MAKE SURE THE LOBBY IS OPEN"
             document.getElementById("createlobby").style.cssText = "color:#fff;background-color:#696969;font-size:12px"
             if(document.getElementById("createlobbyid") != null) {
                 document.getElementById("createlobbyid").innerHTML = data_data.party_id
@@ -145,20 +145,20 @@ document.querySelector("#createlobby").addEventListener("click", async () => {
             }
             setTimeout(function() {
                 created = false
-                document.getElementById("createlobby").innerHTML = "Erstelle Lobby"
+                document.getElementById("createlobby").innerHTML = "CREATE LOBBY"
                 document.getElementById("createlobby").style.cssText = ""
             }, 5000)
         } else {
-            document.getElementById("createlobby").innerHTML = "Fehler bei der Lobby Erstellung, stelle sicher dass du VALORANT offen hast"
+            document.getElementById("createlobby").innerHTML = "Lobby creation error, make sure you have VALORANT open"
             setTimeout(function() {
-                document.getElementById("createlobby").innerHTML = "Erstelle Lobby"
+                document.getElementById("createlobby").innerHTML = "CREATE LOBBY"
             }, 5000)
         }
     }
 })
 
 document.querySelector("#joinlobby").addEventListener("click", async () => {
-    document.getElementById("joinlobby").innerHTML = "Trete bei..."
+    document.getElementById("joinlobby").innerHTML = "JOIN..."
     async function joinLobby() {
         var response = await fetch(`http://127.0.0.1:42069/ingame/v1/join/${document.getElementById("lobbyid").value}`, {
             method: "GET"
@@ -171,11 +171,11 @@ document.querySelector("#joinlobby").addEventListener("click", async () => {
     })
     if(data_data == 200) {
         created = true
-        document.getElementById("joinlobby").innerHTML = "Lobby beigetreten"
+        document.getElementById("joinlobby").innerHTML = "LOBBY JOINED"
         document.getElementById("joinlobby").style.cssText = "color:#fff;background-color:#696969"
     } else if(data_data == 404) {
-        document.getElementById("joinlobby").innerHTML = "Lobby Existiert nicht"
+        document.getElementById("joinlobby").innerHTML = "LOBBY DOES NOT EXIST"
     } else {
-        document.getElementById("joinlobby").innerHTML = "Fehler beim Lobby Beitritt, stelle sicher dass du VALORANT offen hast"
+        document.getElementById("joinlobby").innerHTML = "Error joining lobby, make sure you have VALORANT open"
     }
 })

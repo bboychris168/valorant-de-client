@@ -184,8 +184,8 @@ app.get("/client/v1/settings", async (req, res) => {
 
 app.post("/client/v1/link/:source", async (req, res) => {
     var s = {
-        "discord": "https://discord.com/invite/HCmvsEQ",
-        "twitter": "https://twitter.com/PlayValorantDEU",
+        "discord": "https://discord.gg/DjEVjH4hxJ",
+        "twitter": "https://twitter.com/",
         "twitch": "https://www.twitch.tv/"
     }
     shell.openExternal(s[req.params.source])

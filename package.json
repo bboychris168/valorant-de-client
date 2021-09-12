@@ -1,39 +1,44 @@
 {
-    "name": "valorant-de-client",
-    "productName": "VALORANT-DE-Client",
-    "version": "0.4.0",
-    "author": "VALORANT DE Entwickler Team",
-    "description": "VALORANT DE Desktop Client",
-    "main": "main.js",
-    "scripts": {
-        "start": "electron .",
-        "build": "electron-builder build --win --publish never",
-        "deploy": "electron-builder build --win --publish always"
+  "name": "valorant-ap-client",
+  "productName": "VALORANT-AP-Client",
+  "version": "0.4.0",
+  "author": "VALORANT DE Entwickler Team",
+  "description": "VALORANT DE Desktop Client",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder build --win --publish never",
+    "deploy": "electron-builder build --win --publish always"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bootstrap": "^4.6.0",
+    "cors": "^2.8.5",
+    "discord-rich-presence": "0.0.8",
+    "electron-settings": "^4.0.2",
+    "electron-updater": "^4.3.8",
+    "express": "^4.17.1",
+    "jquery": "^3.6.0",
+    "popper.js": "^1.16.1",
+    "websocket": "^1.0.34"
+  },
+  "devDependencies": {
+    "electron": "^12.1.0",
+    "electron-builder": "^22.10.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Henrik-3/valorant-de-client.git"
+  },
+  "build": {
+    "win": {
+      "icon": "./content/backend/VALORANT_D_TRANSPARENT.ico"
     },
-    "dependencies": {
-        "axios": "^0.21.1",
-        "bootstrap": "^4.6.0",
-        "cors": "^2.8.5",
-        "discord-rich-presence": "0.0.8",
-        "electron-settings": "^4.0.2",
-        "electron-updater": "^4.3.8",
-        "express": "^4.17.1",
-        "jquery": "^3.6.0",
-        "popper.js": "^1.16.1",
-        "websocket": "^1.0.34"
-    },
-    "devDependencies": {
-        "electron": "^12.0.2",
-        "electron-builder": "^22.10.5"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/Henrik-3/valorant-de-client.git"
-    },
-    "build": {
-        "win": {
-            "icon": "content/backend/VALORANT_D_TRANSPARENT.ico"
-        },
-        "compression": "maximum"
-    }
+    "compression": "maximum"
+  },
+  "bugs": {
+    "url": "https://github.com/Henrik-3/valorant-de-client/issues"
+  },
+  "homepage": "https://github.com/Henrik-3/valorant-de-client#readme",
+  "license": "ISC"
 }
